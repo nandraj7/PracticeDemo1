@@ -1,0 +1,41 @@
+﻿@model List<Actor>
+
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h3 align="center">Index View</h3>
+        <table class="table table-primary">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Gender</td>
+                    <td>Salary</td>
+                    <td>Age</td>
+                    <td>City</td>
+                    <td>Update</td>
+                    <td>Delete</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var actor in Model)
+                {
+                    <tr>
+                        <td>@actor.Id</td>
+                        <td>@actor.Name</td>
+                        <td>@actor.Gender</td>
+                        <td>@actor.Salary</td>
+                        <td>@actor.Age</td>
+                        <td>@actor.City</td>
+                        <td><a href="Home/Update/@actor.Id" class="btn btn-primary">Update</a></td>
+                        <td><a href="Home/Delete/@actor.Id" class="btn btn-primary">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    <a href="Home/Create/" class="btn btn-primary">Create</a>
+    </body>
+</html>
